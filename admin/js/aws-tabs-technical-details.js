@@ -11,17 +11,37 @@
                 'format': 'html'
             });
 
-            var titleDefault = '<h3>Detalhes Técnicos</h3>',
+            var options = [
+                'Fabricante',
+                'Modelo',
+                'Bateria',
+                'Conectividade',
+                'Tamanho',
+                'Garantia',
+                'Peso',
+                'Teclado',
+                'Visor',
+                'Voltagem',
+                'Aplicativo',
+                'Cartões',
+                'Câmera',
+                'Tela',
+                'SO'
+            ];
+
+            var tdsForTable = '';
+            options.forEach(function(index){
+                tdsForTable += '<tr><td style="width: 30%; text-align: left;">'+ index +'</td><td style="width: 70%; text-align: left;">' + selected_text + '</td></tr>';
+            });
+
+            var titleDefault = '<h3>Detalhes Técnicos do produto X</h3>',
                 openTable = '<table><tbody>',
-                rowOne = '<tr><th style="text-align: left;"></th><td style="text-align: left;">' + selected_text + '</td></tr>',
-                rowTwo = '<tr><th style="text-align: left;"></th><td style="text-align: left;">' + selected_text + '</td></tr>',
-                rowThree = '<tr><th style="text-align: left;"></th><td style="text-align: left;">' + selected_text + '</td></tr>',
                 closeTable = '</tbody></table>',
-                returnText = '';
+                outputHtml = '';
+            
+            outputHtml = titleDefault + openTable + tdsForTable + closeTable;
 
-
-            returnText = titleDefault + openTable + rowOne + rowTwo + rowThree + closeTable;
-            editor.execCommand('mceReplaceContent', false, returnText);
+            editor.execCommand('mceReplaceContent', false, outputHtml);
             return;
         });
     });
