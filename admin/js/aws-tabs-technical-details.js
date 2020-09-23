@@ -35,7 +35,7 @@
             });
 
             var titleDefault = '<h3>Detalhes Técnicos do produto X</h3>',
-                openTable = '<table><tbody>',
+                openTable = '<table class="table-striped"><tbody>',
                 closeTable = '</tbody></table>',
                 outputHtml = '';
             

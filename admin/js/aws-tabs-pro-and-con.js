@@ -12,8 +12,8 @@
             });
 
             var titleList = '<h3>Adicione um título para lista</h3>',
-                titlePro = '<h5 style="display: block; margin: 12px auto; padding-left: 16px; background-color:#479c47; color: #f2f2f2;">Prós</h5>',
-                titleCon = '<h5 style="display: block; margin: 12px auto; padding-left: 16px; background-color:#e04343; color: #f2f2f2;">Contras</h5>';
+                titlePro = '<h4 style="display: block; margin: 12px auto; padding-left: 16px; background-color:#479c47; color: #f2f2f2;">Prós</h4>',
+                titleCon = '<h4 style="display: block; margin: 12px auto; padding-left: 16px; background-color:#e04343; color: #f2f2f2;">Contras</h4>';
             
             var openWrapper = '<div style="width: 100%; display: flex;">',
                 endWrapper = '</div>';
