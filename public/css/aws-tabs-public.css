@@ -1,0 +1,30 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+.list-of-pros,
+.list-of-cons{
+    list-style: none !important;
+}
+.list-of-pros li,
+.list-of-cons li{
+    position: relative;
+    padding-left: 24px;
+}
+.list-of-pros li::before,
+.list-of-cons li::before{
+    content: '';
+    background-image: url('img/check.svg');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    width: 20px;
+    height: 20px;
+    display: block;
+
+    position: absolute;
+    left: 0;
+}
+ 
+.list-of-cons li::before{
+    background-image: url('img/error.svg');
+}

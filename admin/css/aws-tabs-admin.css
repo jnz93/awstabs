@@ -1,0 +1,17 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+.list-of-pros{
+    list-style: none;
+}
+.list-of-pros li::before{
+    content: '';
+    background-image: url('img/check.svg');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+}
+ 
+.list-of-cons li{
+    list-style: none;
+}
