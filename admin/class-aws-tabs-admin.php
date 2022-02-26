@@ -58,6 +58,7 @@ class Aws_Tabs_Admin {
 		add_action('wp_head', array($this, 'enqueue_styles'));
 
 		add_action( 'init', [ $this, 'awstabs_register_custom_post_type' ] );
+		add_action( 'init', [ $this, 'awstabs_register_custom_taxonomies' ] );
 	}
 
 	/**
@@ -188,5 +189,108 @@ class Aws_Tabs_Admin {
 		);
 	 
 		register_post_type( 'aws-credit-card', $args );
+	}
+
+	/**
+	 * Create custom taxonomies
+	 * 
+	 */
+	public function awstabs_register_custom_taxonomies()
+	{
+		$labels = array(
+			'name'              => _x( 'Bandeiras', 'taxonomy general name', 'textdomain' ),
+			'singular_name'     => _x( 'Bandeira', 'taxonomy singular name', 'textdomain' ),
+			'search_items'      => __( 'Procurar Bandeiras', 'textdomain' ),
+			'all_items'         => __( 'Todas as Bandeiras', 'textdomain' ),
+			'view_item'         => __( 'Visualizar Bandeira', 'textdomain' ),
+			'parent_item'       => __( 'Parent Bandeira', 'textdomain' ),
+			'parent_item_colon' => __( 'Parent Bandeira:', 'textdomain' ),
+			'edit_item'         => __( 'Editar Bandeira', 'textdomain' ),
+			'update_item'       => __( 'Atualizar Bandeira', 'textdomain' ),
+			'add_new_item'      => __( 'Add nova Bandeira', 'textdomain' ),
+			'new_item_name'     => __( 'Novo nome para Bandeira', 'textdomain' ),
+			'not_found'         => __( 'Não encontramos Bandeiras', 'textdomain' ),
+			'back_to_items'     => __( 'Voltar para Bandeiras', 'textdomain' ),
+			'menu_name'         => __( 'Bandeiras', 'textdomain' ),
+		);
+	 
+		$args = array(
+			'labels'            => $labels,
+			'hierarchical'      => false,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'bandeiras' ),
+			'show_in_rest'      => true,
+		);
+		register_taxonomy( 'credit-card-flags', 'aws-credit-card', $args );
+
+		unset($labels);
+		unset($args);
+
+		$labels = array(
+			'name'              => _x( 'Emissores', 'taxonomy general name', 'textdomain' ),
+			'singular_name'     => _x( 'Emissor', 'taxonomy singular name', 'textdomain' ),
+			'search_items'      => __( 'Procurar Emissores', 'textdomain' ),
+			'all_items'         => __( 'Todas os Emissores', 'textdomain' ),
+			'view_item'         => __( 'Visualizar Emissor', 'textdomain' ),
+			'parent_item'       => __( 'Parent Emissor', 'textdomain' ),
+			'parent_item_colon' => __( 'Parent Emissor:', 'textdomain' ),
+			'edit_item'         => __( 'Editar Emissor', 'textdomain' ),
+			'update_item'       => __( 'Atualizar Emissor', 'textdomain' ),
+			'add_new_item'      => __( 'Add novo Emissor', 'textdomain' ),
+			'new_item_name'     => __( 'Novo nome para Emissor', 'textdomain' ),
+			'not_found'         => __( 'Não encontramos Emissores', 'textdomain' ),
+			'back_to_items'     => __( 'Voltar para Emissores', 'textdomain' ),
+			'menu_name'         => __( 'Emissores', 'textdomain' ),
+		);
+	 
+		$args = array(
+			'labels'            => $labels,
+			'hierarchical'      => false,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'emissores' ),
+			'show_in_rest'      => true,
+		);
+		register_taxonomy( 'credit-card-issuers', 'aws-credit-card', $args );
+
+		unset($labels);
+		unset($args);
+
+		$labels = array(
+			'name'              => _x( 'Segmentos', 'taxonomy general name', 'textdomain' ),
+			'singular_name'     => _x( 'Segmento', 'taxonomy singular name', 'textdomain' ),
+			'search_items'      => __( 'Procurar Segmentos', 'textdomain' ),
+			'all_items'         => __( 'Todas os Segmentos', 'textdomain' ),
+			'view_item'         => __( 'Visualizar Segmento', 'textdomain' ),
+			'parent_item'       => __( 'Parent Segmento', 'textdomain' ),
+			'parent_item_colon' => __( 'Parent Segmento:', 'textdomain' ),
+			'edit_item'         => __( 'Editar Segmento', 'textdomain' ),
+			'update_item'       => __( 'Atualizar Segmento', 'textdomain' ),
+			'add_new_item'      => __( 'Add novo Segmento', 'textdomain' ),
+			'new_item_name'     => __( 'Novo nome para Segmento', 'textdomain' ),
+			'not_found'         => __( 'Não encontramos Segmentos', 'textdomain' ),
+			'back_to_items'     => __( 'Voltar para Segmentos', 'textdomain' ),
+			'menu_name'         => __( 'Segmentos', 'textdomain' ),
+		);
+	 
+		$args = array(
+			'labels'            => $labels,
+			'hierarchical'      => false,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'segmentos' ),
+			'show_in_rest'      => true,
+		);
+		register_taxonomy( 'credit-card-segments', 'aws-credit-card', $args );
+
+		unset($labels);
+		unset($args);
 	}
 }
