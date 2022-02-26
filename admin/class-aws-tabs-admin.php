@@ -146,30 +146,30 @@ class Aws_Tabs_Admin {
 	public function awstabs_register_custom_post_type()
 	{
 		$labels = array(
-			'name'                  => _x( 'AWS Posts', 'Post type general name', 'textdomain' ),
-			'singular_name'         => _x( 'AWS Post', 'Post type singular name', 'textdomain' ),
-			'menu_name'             => _x( 'AWS Posts', 'Admin Menu text', 'textdomain' ),
-			'name_admin_bar'        => _x( 'AWS Post', 'Add New on Toolbar', 'textdomain' ),
+			'name'                  => _x( 'AWS Cartões de Crédito', 'Post type general name', 'textdomain' ),
+			'singular_name'         => _x( 'AWS Cartão de Crédito', 'Post type singular name', 'textdomain' ),
+			'menu_name'             => _x( 'AWS Cartão de Crédito', 'Admin Menu text', 'textdomain' ),
+			'name_admin_bar'        => _x( 'AWS Cartão de Crédito', 'Add New on Toolbar', 'textdomain' ),
 			'add_new'               => __( 'Adicionar novo', 'textdomain' ),
-			'add_new_item'          => __( 'Adicionar novo AWS Post', 'textdomain' ),
-			'new_item'              => __( 'Novo AWS Post', 'textdomain' ),
-			'edit_item'             => __( 'Editar AWS Post', 'textdomain' ),
-			'view_item'             => __( 'Visualizar AWS Post', 'textdomain' ),
-			'all_items'             => __( 'Todos AWS Posts', 'textdomain' ),
-			'search_items'          => __( 'Procurar AWS Posts', 'textdomain' ),
-			'parent_item_colon'     => __( 'Parent AWS Posts:', 'textdomain' ),
-			'not_found'             => __( 'No AWS Posts found.', 'textdomain' ),
-			'not_found_in_trash'    => __( 'No AWS Posts found in Trash.', 'textdomain' ),
-			'featured_image'        => _x( 'AWS Post Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
-			'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-			'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-			'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
-			'archives'              => _x( 'AWS Post archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
-			'insert_into_item'      => _x( 'Insert into AWS Post', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
-			'uploaded_to_this_item' => _x( 'Uploaded to this AWS Post', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
-			'filter_items_list'     => _x( 'Filter AWS Posts list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
-			'items_list_navigation' => _x( 'AWS Posts list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
-			'items_list'            => _x( 'AWS Posts list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+			'add_new_item'          => __( 'Adicionar novo Cartão de Crédito', 'textdomain' ),
+			'new_item'              => __( 'Novo', 'textdomain' ),
+			'edit_item'             => __( 'Editar', 'textdomain' ),
+			'view_item'             => __( 'Visualizar', 'textdomain' ),
+			'all_items'             => __( 'Todos Cartão de Crédito', 'textdomain' ),
+			'search_items'          => __( 'Procurar Cartão de Crédito', 'textdomain' ),
+			'parent_item_colon'     => __( 'Parent Cartão de Crédito:', 'textdomain' ),
+			'not_found'             => __( 'No Cartão de Crédito found.', 'textdomain' ),
+			'not_found_in_trash'    => __( 'No Cartão de Crédito found in Trash.', 'textdomain' ),
+			'featured_image'        => _x( 'Cartão de Crédito Foto', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'textdomain' ),
+			'set_featured_image'    => _x( 'Definir foto do cartão', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+			'remove_featured_image' => _x( 'Remover foto do cartão', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+			'use_featured_image'    => _x( 'Usar como foto do cartão', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'textdomain' ),
+			'archives'              => _x( 'Cartão de Crédito arquivos', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'textdomain' ),
+			'insert_into_item'      => _x( 'Inserir em Cartão de Crédito', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'textdomain' ),
+			'uploaded_to_this_item' => _x( 'Carregado para o Cartão de Crédito', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'textdomain' ),
+			'filter_items_list'     => _x( 'Filtrar lista de Cartão de Crédito', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'textdomain' ),
+			'items_list_navigation' => _x( 'Cartão de Crédito lista de navegação', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+			'items_list'            => _x( 'Cartão de Crédito Lista', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
 		);
 	 
 		$args = array(
@@ -179,7 +179,7 @@ class Aws_Tabs_Admin {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'aws-post' ),
+			'rewrite'            => array( 'slug' => 'credit-card' ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
@@ -187,6 +187,6 @@ class Aws_Tabs_Admin {
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
 		);
 	 
-		register_post_type( 'aws-post', $args );
+		register_post_type( 'aws-credit-card', $args );
 	}
 }
