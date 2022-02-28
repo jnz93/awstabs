@@ -59,6 +59,9 @@ class Aws_Tabs_Admin {
 
 		add_action( 'init', [ $this, 'awstabs_register_custom_post_type' ] );
 		add_action( 'init', [ $this, 'awstabs_register_custom_taxonomies' ] );
+
+		add_action( 'add_meta_boxes', [ $this, 'awstabs_register_metaboxes_for_credit_card' ] );
+		add_action( 'save_post', [ $this, 'awstabs_save_custom_mb' ] );
 	}
 
 	/**
@@ -293,4 +296,92 @@ class Aws_Tabs_Admin {
 		unset($labels);
 		unset($args);
 	}
+
+	/**
+	 * Registrando novos metaboxes
+	 * 
+	 */
+	public function awstabs_register_metaboxes_for_credit_card()
+	{
+		$screen = 'aws-credit-card';
+		add_meta_box(
+			'awstabs_default_cashback',          				// Unique ID
+			'Cashback Padrão', 									// Box title
+			[ $this, 'awstabs_cashback_callback' ],   			// Content callback, must be of type callable
+			$screen                 							// Post type
+		);
+
+		add_meta_box(
+			'awstabs_partners_cashback',          				// Unique ID
+			'Cashback Parceiros', 								// Box title
+			[ $this, 'awstabs_partners_cashback_callback' ],   	// Content callback, must be of type callable
+			$screen                 							// Post type
+		);
+
+		add_meta_box(
+			'awstabs_annuity',          						// Unique ID
+			'Anuidade', 										// Box title
+			[ $this, 'awstabs_annuity_callback' ],   			// Content callback, must be of type callable
+			$screen                 							// Post type
+		);
+	}
+
+	/**
+	 * Callback Cashback Padrão
+	 * 
+	 */
+	public function awstabs_cashback_callback( $post )
+	{
+		$value = get_post_meta( $post->ID, 'awstabs_default_cashback', true );
+        ?>
+        <label for="awstabs_default_cashback">Cashback Padrão</label>
+        <input type="text" name="awstabs_default_cashback" id="awstabs_default_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+        <?php
+	}
+
+	/**
+	 * Callback Cashback Parceiros
+	 * 
+	 */
+	public function awstabs_partners_cashback_callback( $post )
+	{
+		$value = get_post_meta( $post->ID, 'awstabs_partners_cashback', true );
+        ?>
+        <label for="awstabs_partners_cashback">Cashback Parceiros</label>
+        <input type="text" name="awstabs_partners_cashback" id="awstabs_partners_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+        <?php
+	}
+
+	/**
+	 * Callback Cashback Parceiros
+	 * 
+	 */
+	public function awstabs_annuity_callback( $post )
+	{
+		$value = get_post_meta( $post->ID, 'awstabs_annuity', true );
+        ?>
+        <label for="awstabs_annuity">Anuidade</label>
+        <input type="text" name="awstabs_annuity" id="awstabs_annuity" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+        <?php
+	}
+
+
+	/**
+     * Save the meta box selections.
+     *
+     * @param int $post_id  The post ID.
+     */
+    public function awstabs_save_custom_mb( $post_id ) {
+		// Do not save the data if autosave
+		if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+			return $post_id;
+		}
+
+		$metaKeys = ['awstabs_default_cashback', 'awstabs_partners_cashback', 'awstabs_annuity'];
+		foreach( $metaKeys as $key ){
+			if( array_key_exists( $key, $_POST ) ){
+				update_post_meta( $post_id, $key, $_POST[$key] );
+			}
+		}
+    }
 }
