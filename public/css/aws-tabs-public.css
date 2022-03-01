@@ -28,3 +28,26 @@
 .list-of-cons li::before{
     background-image: url('img/error.svg');
 }
+
+/* Tabela de cartões */
+div.header-list{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #2980b9;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+div.table-responsive{
+    margin-top: 0 !important;
+}
+thead.table-head-rank{
+    background: #3498db;
+    color: #fff;
+}
+span.rank-position{
+    background: #bdc3c7;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 100%;
+}

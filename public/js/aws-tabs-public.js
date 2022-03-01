@@ -30,3 +30,65 @@
 	 */
 
 })( jQuery );
+
+function filterByFlag( el ){
+	let selectedValue = el.val(),
+		trs = jQuery('.table-credit-cards tbody tr');
+	console.log(selectedValue)
+	console.log(trs);
+
+	trs.each(function() {
+		if( selectedValue == ''  ){
+			jQuery(this).removeClass('d-none');
+		} else if( selectedValue == jQuery(this).attr('data-flag') ){
+			jQuery(this).removeClass('d-none');
+		} else {
+			jQuery(this).addClass('d-none');
+		}
+	});
+}
+
+
+function filterByIssuer( el ){
+	let selectedValue = el.val(),
+		trs = jQuery('.table-credit-cards tbody tr');
+
+	trs.each(function() {
+		if( selectedValue == ''  ){
+			jQuery(this).removeClass('d-none');
+		} else if( selectedValue == jQuery(this).attr('data-issuer') ){
+			jQuery(this).removeClass('d-none');
+		} else {
+			jQuery(this).addClass('d-none');
+		}
+	});
+}
+
+function filterBySegment( el ){
+	let selectedValue = el.val(),
+		trs = jQuery('.table-credit-cards tbody tr');
+
+	trs.each(function() {
+		if( selectedValue == ''  ){
+			jQuery(this).removeClass('d-none');
+		} else if( selectedValue == jQuery(this).attr('data-segment') ){
+			jQuery(this).removeClass('d-none');
+		} else {
+			jQuery(this).addClass('d-none');
+		}
+	});
+}
+
+jQuery(document).ready( function(){
+	jQuery('#card-flag').change( function(){
+		filterByFlag( jQuery(this) );
+	});
+
+	jQuery('#card-issuer').change( function (){
+		filterByIssuer( jQuery(this) );
+	})
+
+	jQuery('#card-segment').change( function (){
+		filterBySegment( jQuery(this) );
+	})
+});
