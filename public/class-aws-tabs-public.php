@@ -108,8 +108,11 @@ class Aws_Tabs_Public {
 	public function table_of_credit_card( $atts ){
 		$a = shortcode_atts( 
 			[
-				'number'    => 5,
-				'tableType'	=> 'default',
+				'total'    				=> -1,
+				'cashback'				=> '',
+				'cashback_parceiros'	=> '',
+				'anuidade'				=> '',
+				'ordem'					=> 'DESC'
 			], 
 			$atts
 		);
@@ -117,10 +120,27 @@ class Aws_Tabs_Public {
         $args   = array(
             'post_type'         => 'aws-credit-card',
             'post_status'       => 'publish',
-            'posts_per_page'    => $a['number'],
+            'posts_per_page'    => $a['total'],
+			'order'				=> $a['ordem'],
         );
+
+		if( $a['cashback'] == '1' ){
+			$args['meta_key']	= 'awstabs_default_cashback';
+			$args['orderby']	= 'meta_value_num';
+		}
+
+		if( $a['cashback_parceiros'] == '1' ){
+			$args['meta_key']	= 'awstabs_partners_cashback';
+			$args['orderby']	= 'meta_value_num';
+		}
+
+		if( $a['anuidade'] == '1' ){
+			$args['meta_key']	= 'awstabs_annuity';
+			$args['orderby']	= 'meta_value_num';
+		}
         $posts 	= new WP_Query($args);
 
+		unset($args);
 		# Bandeiras
 		$args = array(
 			'taxonomy'		=> 'credit-card-flags',
