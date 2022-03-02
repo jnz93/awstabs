@@ -212,9 +212,9 @@ class Aws_Tabs_Public {
 							'. $thumbnail .'
 						</div>
 					</th>
-					<td>'. $defaultCashback .'</td>
-					<td>'. $partnersCashback .'</td>
-					<td>'. $annuity .'</td>
+					<td>'. $defaultCashback .'%</td>
+					<td>'. $partnersCashback .'%</td>
+					<td>R$'. $annuity .'</td>
 					<td>'. $comments .'</td>
 				</tr>';
 
