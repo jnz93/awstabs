@@ -180,19 +180,19 @@ class Aws_Tabs_Public {
 			$output .= '<div class="row header-list">
 				<div class="col-4">
 					<select name="" id="card-flag" class="">
-						<option value="" class="" selected>Todas</option>
+						<option value="" class="" selected>Bandeiras</option>
 						'. $flags .'
 					</select>
 				</div>
 				<div class="col-4">
 					<select name="" id="card-issuer" class="">
-						<option value="" class="" selected>Todas</option>
+						<option value="" class="" selected>Emissor</option>
 						'. $issuers .'
 					</select>
 				</div>
 				<div class="col-4">
 					<select name="" id="card-segment" class="">
-						<option value="" class="" selected>Todas</option>
+						<option value="" class="" selected>Segmento</option>
 						'. $segments .'
 					</select>
 				</div>
