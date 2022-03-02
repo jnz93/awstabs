@@ -334,9 +334,22 @@ class Aws_Tabs_Admin {
 	public function awstabs_cashback_callback( $post )
 	{
 		$value = get_post_meta( $post->ID, 'awstabs_default_cashback', true );
+		$until = get_post_meta( $post->ID, 'awstabs_default_cashback_until', true );
         ?>
-        <label for="awstabs_default_cashback">Cashback Padrão</label>
-        <input type="text" name="awstabs_default_cashback" id="awstabs_default_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+		<div class="mb-3">
+			<label for="awstabs_default_cashback" class="">A partir de: </label>
+			<div class="input-group">
+				<input type="text" name="awstabs_default_cashback" id="awstabs_default_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_default_cashback_addon">
+				<span class="input-group-text" id="awstabs_default_cashback_addon">%</span>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="awstabs_default_cashback_until" class="">Até: </label>
+			<div class="input-group">
+				<input type="text" name="awstabs_default_cashback_until" id="awstabs_default_cashback_until" value="<?php echo strlen($until) != 0 ? $until : ''; ?>" aria-describedby="awstabs_default_cashback_until_addon">
+				<span class="input-group-text" id="awstabs_default_cashback_until_addon">%</span>
+			</div>
+		</div>
         <?php
 	}
 
@@ -347,9 +360,23 @@ class Aws_Tabs_Admin {
 	public function awstabs_partners_cashback_callback( $post )
 	{
 		$value = get_post_meta( $post->ID, 'awstabs_partners_cashback', true );
+		$until = get_post_meta( $post->ID, 'awstabs_partners_cashback_until', true );
         ?>
-        <label for="awstabs_partners_cashback">Cashback Parceiros</label>
-        <input type="text" name="awstabs_partners_cashback" id="awstabs_partners_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+		<div class="mb-3">
+			<label for="awstabs_partners_cashback" class="">A partir de: </label>
+			<div class="input-group">
+				<input type="text" name="awstabs_partners_cashback" id="awstabs_partners_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_partners_cashback_addon">
+				<span class="input-group-text" id="awstabs_partners_cashback_addon">%</span>
+			</div>
+		</div>
+		<div class="mb-3">
+			<label for="awstabs_partners_cashback_until" class="">Até: </label>
+			<div class="input-group">
+				<input type="text" name="awstabs_partners_cashback_until" id="awstabs_partners_cashback_until" value="<?php echo strlen($until) != 0 ? $until : ''; ?>" aria-describedby="awstabs_partners_cashback_until_addon">
+				<span class="input-group-text" id="awstabs_partners_cashback_until_addon">%</span>
+			</div>
+		</div>
+        
         <?php
 	}
 
@@ -361,8 +388,10 @@ class Aws_Tabs_Admin {
 	{
 		$value = get_post_meta( $post->ID, 'awstabs_annuity', true );
         ?>
-        <label for="awstabs_annuity">Anuidade</label>
-        <input type="text" name="awstabs_annuity" id="awstabs_annuity" value="<?php echo strlen($value) != 0 ? $value : ''; ?>">
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="awstabs_annuity_addon">R$</span>
+			<input type="text" name="awstabs_annuity" id="awstabs_annuity"  value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_annuity_addon">
+		</div>
         <?php
 	}
 
@@ -378,7 +407,7 @@ class Aws_Tabs_Admin {
 			return $post_id;
 		}
 
-		$metaKeys = ['awstabs_default_cashback', 'awstabs_partners_cashback', 'awstabs_annuity'];
+		$metaKeys = ['awstabs_default_cashback', 'awstabs_default_cashback_until', 'awstabs_partners_cashback', 'awstabs_partners_cashback_until', 'awstabs_annuity'];
 		foreach( $metaKeys as $key ){
 			if( array_key_exists( $key, $_POST ) ){
 				update_post_meta( $post_id, $key, $_POST[$key] );
