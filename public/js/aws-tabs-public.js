@@ -86,9 +86,9 @@ jQuery(document).ready( function(){
 
 	jQuery('#card-issuer').change( function (){
 		filterByIssuer( jQuery(this) );
-	})
+	});
 
 	jQuery('#card-segment').change( function (){
 		filterBySegment( jQuery(this) );
-	})
+	});
 });
