@@ -48,7 +48,6 @@ function filterByFlag( el ){
 	});
 }
 
-
 function filterByIssuer( el ){
 	let selectedValue = el.val(),
 		trs = jQuery('.table-credit-cards tbody tr');
