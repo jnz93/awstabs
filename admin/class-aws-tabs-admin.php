@@ -320,6 +320,13 @@ class Aws_Tabs_Admin {
 		);
 
 		add_meta_box(
+			'awstabs_minimum_income',							// Unique ID
+			'Renda Mínima', 									// Box title
+			[ $this, 'awstabs_minimum_income_callback' ],		// Content callback, must be of type callable
+			$screen                 							// Post type
+		);
+
+		add_meta_box(
 			'awstabs_annuity',          						// Unique ID
 			'Anuidade', 										// Box title
 			[ $this, 'awstabs_annuity_callback' ],   			// Content callback, must be of type callable
@@ -370,6 +377,22 @@ class Aws_Tabs_Admin {
 		</div>        
         <?php
 	}
+
+	/**
+	 * Callback Renda Mínima
+	 * 
+	 */
+	public function awstabs_minimum_income_callback( $post )
+	{
+		$value = get_post_meta( $post->ID, 'awstabs_minimum_income', true );
+        ?>
+		<div class="input-group mb-3">
+			<span class="input-group-text" id="awstabs_minimum_income_addon">R$</span>
+			<input type="text" name="awstabs_minimum_income" id="awstabs_minimum_income"  value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_minimum_income_addon">
+		</div>
+        <?php
+	}
+
 
 	/**
 	 * Callback Anuidade
