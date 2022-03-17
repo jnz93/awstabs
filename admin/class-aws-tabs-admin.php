@@ -313,9 +313,9 @@ class Aws_Tabs_Admin {
 		);
 
 		add_meta_box(
-			'awstabs_partners_cashback',          				// Unique ID
-			'Cashback Parceiros', 								// Box title
-			[ $this, 'awstabs_partners_cashback_callback' ],   	// Content callback, must be of type callable
+			'awstabs_punctuation',          				// Unique ID
+			'Pontuação',		 								// Box title
+			[ $this, 'awstabs_punctuation_callback' ],   		// Content callback, must be of type callable
 			$screen                 							// Post type
 		);
 
@@ -357,31 +357,22 @@ class Aws_Tabs_Admin {
 	 * Callback Cashback Parceiros
 	 * 
 	 */
-	public function awstabs_partners_cashback_callback( $post )
+	public function awstabs_punctuation_callback( $post )
 	{
-		$value = get_post_meta( $post->ID, 'awstabs_partners_cashback', true );
-		$until = get_post_meta( $post->ID, 'awstabs_partners_cashback_until', true );
+		$value = get_post_meta( $post->ID, 'awstabs_punctuation', true );
         ?>
 		<div class="mb-3">
-			<label for="awstabs_partners_cashback" class="">A partir de: </label>
+			<label for="awstabs_punctuation" class="">Pontuação: </label>
 			<div class="input-group">
-				<input type="text" name="awstabs_partners_cashback" id="awstabs_partners_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_partners_cashback_addon">
-				<span class="input-group-text" id="awstabs_partners_cashback_addon">%</span>
+				<input type="text" name="awstabs_punctuation" id="awstabs_punctuation" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_punctuation_addon">
+				<span class="input-group-text" id="awstabs_punctuation_addon">PTs</span>
 			</div>
-		</div>
-		<div class="mb-3">
-			<label for="awstabs_partners_cashback_until" class="">Até: </label>
-			<div class="input-group">
-				<input type="text" name="awstabs_partners_cashback_until" id="awstabs_partners_cashback_until" value="<?php echo strlen($until) != 0 ? $until : ''; ?>" aria-describedby="awstabs_partners_cashback_until_addon">
-				<span class="input-group-text" id="awstabs_partners_cashback_until_addon">%</span>
-			</div>
-		</div>
-        
+		</div>        
         <?php
 	}
 
 	/**
-	 * Callback Cashback Parceiros
+	 * Callback Anuidade
 	 * 
 	 */
 	public function awstabs_annuity_callback( $post )
