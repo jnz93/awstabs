@@ -110,7 +110,7 @@ class Aws_Tabs_Public {
 			[
 				'total'    				=> -1,
 				'cashback'				=> '',
-				'cashback_parceiros'	=> '',
+				'categoria'				=> '',
 				'anuidade'				=> '',
 				'ordem'					=> 'DESC'
 			], 
@@ -129,9 +129,8 @@ class Aws_Tabs_Public {
 			$args['orderby']	= 'meta_value_num';
 		}
 
-		if( $a['cashback_parceiros'] == '1' ){
-			$args['meta_key']	= 'awstabs_partners_cashback';
-			$args['orderby']	= 'meta_value_num';
+		if( strlen($a['categoria']) > 0 ){
+			$args['category_name']	= $a['categoria'];
 		}
 
 		if( $a['anuidade'] == '1' ){
