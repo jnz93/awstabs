@@ -421,7 +421,7 @@ class Aws_Tabs_Admin {
 			return $post_id;
 		}
 
-		$metaKeys = ['awstabs_default_cashback', 'awstabs_default_cashback_until', 'awstabs_partners_cashback', 'awstabs_partners_cashback_until', 'awstabs_annuity'];
+		$metaKeys = ['awstabs_default_cashback', 'awstabs_default_cashback_until', 'awstabs_punctuation', 'awstabs_minimum_income', 'awstabs_annuity'];
 		foreach( $metaKeys as $key ){
 			if( array_key_exists( $key, $_POST ) ){
 				update_post_meta( $post_id, $key, $_POST[$key] );
