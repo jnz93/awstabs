@@ -189,6 +189,7 @@ class Aws_Tabs_Admin {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
+			'taxonomies'		 => array( 'category' ),
 			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt' ),
 		);
 	 
