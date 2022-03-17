@@ -204,7 +204,8 @@ class Aws_Tabs_Public {
 						<tr>
 						<th scope="col">#</th>
 						<th scope="col">Cashback Padrão</th>
-						<th scope="col">Cashback Parceiros</th>
+						<th scope="col">Renda Mínima</th>
+						<th scope="col">Pontuação</th>
 						<th scope="col">Anuidade</th>
 						<th scope="col">Observações</th>
 						</tr>
@@ -217,7 +218,8 @@ class Aws_Tabs_Public {
 				$thumbnail 			= get_the_post_thumbnail( $id );
 				$title 				= get_the_title( $id );
 				$defaultCashback 	= get_post_meta( $id, 'awstabs_default_cashback', true );
-				$partnersCashback 	= get_post_meta( $id, 'awstabs_partners_cashback', true );
+				$ponctuation 		= get_post_meta( $id, 'awstabs_punctuation', true );
+				$minimumIncome 		= get_post_meta( $id, 'awstabs_minimum_income', true );
 				$annuity 			= get_post_meta( $id, 'awstabs_annuity', true );
 				$comments 			= get_the_content( $id );
 				$flag 				= wp_get_post_terms( $id, 'credit-card-flags' );
@@ -232,9 +234,10 @@ class Aws_Tabs_Public {
 							'. $thumbnail .'
 						</div>
 					</th>
-					<td>'. $defaultCashback .'%</td>
-					<td>'. $partnersCashback .'%</td>
-					<td>R$'. $annuity .'</td>
+					<td>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).'</td>
+					<td>'. ( strlen($minimumIncome) > 0 ? 'R$' . $minimumIncome : 'n/a' ) .'</td>
+					<td>'. ( strlen($ponctuation) > 0 ? $ponctuation : 'n/a' ) .'</td>
+					<td>'. ( strlen($annuity) > 0 ? 'R$' . $annuity : 'n/a' ) .'</td>
 					<td>'. $comments .'</td>
 				</tr>';
 
