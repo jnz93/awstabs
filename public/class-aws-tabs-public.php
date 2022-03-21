@@ -217,6 +217,7 @@ class Aws_Tabs_Public {
 				$thumbnail 			= get_the_post_thumbnail( $id, 'medium', array( 'class' => 'cardImage' ) );
 				$title 				= get_the_title( $id );
 				$defaultCashback 	= get_post_meta( $id, 'awstabs_default_cashback', true );
+				$defaultUntilCashback = get_post_meta( $id, 'awstabs_default_cashback_until', true );
 				$ponctuation 		= get_post_meta( $id, 'awstabs_punctuation', true );
 				$minimumIncome 		= get_post_meta( $id, 'awstabs_minimum_income', true );
 				$annuity 			= get_post_meta( $id, 'awstabs_annuity', true );
@@ -235,7 +236,7 @@ class Aws_Tabs_Public {
 							'. $thumbnail .'
 						</div>
 					</th>
-					<td>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).'</td>
+					<td>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).' até '. ( strlen($defaultUntilCashback) > 0 ? $defaultUntilCashback . '%' : '' ).'</td>
 					<td>'. ( strlen($minimumIncome) > 0 ? 'R$' . $minimumIncome : 'n/a' ) .'</td>
 					<td>'. ( strlen($ponctuation) > 0 ? $ponctuation : 'n/a' ) .'</td>
 					<td>'. ( strlen($annuity) > 0 ? 'R$' . $annuity : 'n/a' ) .'</td>
