@@ -178,19 +178,19 @@ class Aws_Tabs_Public {
 		if( $posts->have_posts() ){
 			$output .= '<div class="row header-list">
 				<div class="col-4">
-					<select name="" id="card-flag" class="">
+					<select name="" id="card-flag" class="form-select">
 						<option value="" class="" selected>Bandeiras</option>
 						'. $flags .'
 					</select>
 				</div>
 				<div class="col-4">
-					<select name="" id="card-issuer" class="">
+					<select name="" id="card-issuer" class="form-select">
 						<option value="" class="" selected>Emissor</option>
 						'. $issuers .'
 					</select>
 				</div>
 				<div class="col-4">
-					<select name="" id="card-segment" class="">
+					<select name="" id="card-segment" class="form-select">
 						<option value="" class="" selected>Segmento</option>
 						'. $segments .'
 					</select>
