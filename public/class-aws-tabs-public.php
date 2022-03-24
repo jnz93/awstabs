@@ -112,6 +112,7 @@ class Aws_Tabs_Public {
 				'cashback'				=> '',
 				'categoria'				=> '',
 				'anuidade'				=> '',
+				'r-coluna'				=> '',
 				'ordem'					=> 'DESC'
 			], 
 			$atts
@@ -201,12 +202,12 @@ class Aws_Tabs_Public {
 				<table class="table table-striped table-credit-cards">
 					<thead class="table-head-rank">
 						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Cashback Padrão</th>
-							<th scope="col">Renda Mínima</th>
-							<th scope="col">Pontuação</th>
-							<th scope="col">Anuidade</th>
-							<th scope="col">Observações</th>
+							<th scope="col" '. ( $a['r-coluna'] == '1' ? 'class="d-none"' : '' ) .'>#</th>
+							<th scope="col" '. ( $a['r-coluna'] == '2' ? 'class="d-none"' : '' ) .'>Cashback Padrão</th>
+							<th scope="col" '. ( $a['r-coluna'] == '3' ? 'class="d-none"' : '' ) .'>Renda Mínima</th>
+							<th scope="col" '. ( $a['r-coluna'] == '4' ? 'class="d-none"' : '' ) .'>Pontuação</th>
+							<th scope="col" '. ( $a['r-coluna'] == '5' ? 'class="d-none"' : '' ) .'>Anuidade</th>
+							<th scope="col" '. ( $a['r-coluna'] == '6' ? 'class="d-none"' : '' ) .'>Observações</th>
 						</tr>
 					</thead>
 					<tbody>';
@@ -227,7 +228,7 @@ class Aws_Tabs_Public {
 				$segment 			= wp_get_post_terms( $id, 'credit-card-segments' );
 				
 				$output .= '<tr data-flag="'. strtolower( $flag[0]->name ) .'" data-issuer="'. strtolower( $issuer[0]->name ) .'" data-segment="'. strtolower( $segment[0]->name ) .'">
-					<th scope="row">
+					<th scope="row" '. ( $a['r-coluna'] == '1' ? 'class="d-none"' : '' ) .'>
 						<div class="d-block">
 							<span class="badge rounded-pill bg-secondary">'.$position.'º</span>
 							<h6 class="d-block m-0 mt-1 mb-1">'. $title .'</h6>
@@ -236,11 +237,11 @@ class Aws_Tabs_Public {
 							'. $thumbnail .'
 						</div>
 					</th>
-					<td>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).' até '. ( strlen($defaultUntilCashback) > 0 ? $defaultUntilCashback . '%' : '' ).'</td>
-					<td>'. ( strlen($minimumIncome) > 0 ? 'R$' . $minimumIncome : 'n/a' ) .'</td>
-					<td>'. ( strlen($ponctuation) > 0 ? $ponctuation : 'n/a' ) .'</td>
-					<td>'. ( strlen($annuity) > 0 ? 'R$' . $annuity : 'n/a' ) .'</td>
-					<td>'. $comments .'</td>
+					<td '. ( $a['r-coluna'] == '2' ? 'class="d-none"' : '' ).'>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).' até '. ( strlen($defaultUntilCashback) > 0 ? $defaultUntilCashback . '%' : '' ).'</td>
+					<td '. ( $a['r-coluna'] == '3' ? 'class="d-none"' : '' ).'>'. ( strlen($minimumIncome) > 0 ? 'R$' . $minimumIncome : 'n/a' ) .'</td>
+					<td '. ( $a['r-coluna'] == '4' ? 'class="d-none"' : '' ).'>'. ( strlen($ponctuation) > 0 ? $ponctuation : 'n/a' ) .'</td>
+					<td '. ( $a['r-coluna'] == '5' ? 'class="d-none"' : '' ).'>'. ( strlen($annuity) > 0 ? 'R$' . $annuity : 'n/a' ) .'</td>
+					<td '. ( $a['r-coluna'] == '6' ? 'class="d-none"' : '' ).'>'. $comments .'</td>
 				</tr>';
 
 				$position++;
