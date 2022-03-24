@@ -214,7 +214,7 @@ class Aws_Tabs_Public {
 			while( $posts->have_posts() ){
 				$posts->the_post();
 				$id 				= get_the_ID();
-				$thumbnail 			= get_the_post_thumbnail( $id, 'medium', array( 'class' => 'cardImage' ) );
+				$thumbnail 			= get_the_post_thumbnail( $id, 'medium', array( 'class' => 'cardImage img-thumbnail' ) );
 				$title 				= get_the_title( $id );
 				$defaultCashback 	= get_post_meta( $id, 'awstabs_default_cashback', true );
 				$defaultUntilCashback = get_post_meta( $id, 'awstabs_default_cashback_until', true );
@@ -228,11 +228,11 @@ class Aws_Tabs_Public {
 				
 				$output .= '<tr data-flag="'. strtolower( $flag[0]->name ) .'" data-issuer="'. strtolower( $issuer[0]->name ) .'" data-segment="'. strtolower( $segment[0]->name ) .'">
 					<th scope="row">
-						<div class="d-block position-relative">
-							'. $title .'
+						<div class="d-block">
+							<span class="badge rounded-pill bg-secondary">'.$position.'º</span>
+							<h6 class="d-block m-0 mt-1 mb-1">'. $title .'</h6>
 						</div>
 						<div class="d-flex align-items-center">
-							<span class="rank-position d-flex align-items-center justify-content-center">'. $position .'º</span>
 							'. $thumbnail .'
 						</div>
 					</th>
