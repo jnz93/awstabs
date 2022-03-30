@@ -243,10 +243,10 @@ class Aws_Tabs_Public {
 							'. $thumbnail .'
 						</div>
 					</th>
-					<td '. ( in_array( '2', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '%' : 'n/a' ).' até '. ( strlen($defaultUntilCashback) > 0 ? $defaultUntilCashback . '%' : '' ).'</td>
-					<td '. ( in_array( '3', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($minimumIncome) > 0 ? 'R$' . $minimumIncome : 'n/a' ) .'</td>
+					<td '. ( in_array( '2', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($defaultCashback) > 0 ? $defaultCashback . '' : 'n/a' ).' '. ( strlen($defaultUntilCashback) > 0 ? ' até ' . $defaultUntilCashback . '%' : '' ).'</td>
+					<td '. ( in_array( '3', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($minimumIncome) > 0 ? '' . $minimumIncome : 'n/a' ) .'</td>
 					<td '. ( in_array( '4', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($ponctuation) > 0 ? $ponctuation : 'n/a' ) .'</td>
-					<td '. ( in_array( '5', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($annuity) > 0 ? 'R$' . $annuity : 'n/a' ) .'</td>
+					<td '. ( in_array( '5', $rColumns ) ? 'class="d-none"' : '' ).'>'. ( strlen($annuity) > 0 ? '' . $annuity : 'n/a' ) .'</td>
 					<td '. ( in_array( '6', $rColumns ) ? 'class="d-none"' : '' ).'>'. $comments .'</td>
 				</tr>';
 

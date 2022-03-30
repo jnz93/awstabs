@@ -348,14 +348,12 @@ class Aws_Tabs_Admin {
 			<label for="awstabs_default_cashback" class="">A partir de: </label>
 			<div class="input-group">
 				<input type="text" name="awstabs_default_cashback" id="awstabs_default_cashback" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_default_cashback_addon">
-				<span class="input-group-text" id="awstabs_default_cashback_addon">%</span>
 			</div>
 		</div>
 		<div class="mb-3">
 			<label for="awstabs_default_cashback_until" class="">Até: </label>
 			<div class="input-group">
 				<input type="text" name="awstabs_default_cashback_until" id="awstabs_default_cashback_until" value="<?php echo strlen($until) != 0 ? $until : ''; ?>" aria-describedby="awstabs_default_cashback_until_addon">
-				<span class="input-group-text" id="awstabs_default_cashback_until_addon">%</span>
 			</div>
 		</div>
         <?php
@@ -373,7 +371,6 @@ class Aws_Tabs_Admin {
 			<label for="awstabs_punctuation" class="">Pontuação: </label>
 			<div class="input-group">
 				<input type="text" name="awstabs_punctuation" id="awstabs_punctuation" value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_punctuation_addon">
-				<span class="input-group-text" id="awstabs_punctuation_addon">PTs</span>
 			</div>
 		</div>        
         <?php
@@ -388,7 +385,6 @@ class Aws_Tabs_Admin {
 		$value = get_post_meta( $post->ID, 'awstabs_minimum_income', true );
         ?>
 		<div class="input-group mb-3">
-			<span class="input-group-text" id="awstabs_minimum_income_addon">R$</span>
 			<input type="text" name="awstabs_minimum_income" id="awstabs_minimum_income"  value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_minimum_income_addon">
 		</div>
         <?php
@@ -404,7 +400,6 @@ class Aws_Tabs_Admin {
 		$value = get_post_meta( $post->ID, 'awstabs_annuity', true );
         ?>
 		<div class="input-group mb-3">
-			<span class="input-group-text" id="awstabs_annuity_addon">R$</span>
 			<input type="text" name="awstabs_annuity" id="awstabs_annuity"  value="<?php echo strlen($value) != 0 ? $value : ''; ?>" aria-describedby="awstabs_annuity_addon">
 		</div>
         <?php
